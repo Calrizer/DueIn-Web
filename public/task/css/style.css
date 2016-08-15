@@ -1,0 +1,245 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #3C3D42;
+  background: #fd3a52;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.container {
+  max-width: 650px;
+  width: 100%;
+  margin-bottom: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.ad-container {
+  max-width: 498px;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.view {
+   background: #F9F9F9;
+   padding: 20px;
+   margin: 0 0;
+   border-radius: 4px;
+   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+ }
+
+.ad {
+  background: #F9F9F9;
+  padding: 15px;
+  margin: 0 0;
+  border-radius: 4px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="password"],
+#contact input[type="username"],
+#contact input[type="tel"],
+#contact textarea,
+button[type="submit"] {
+  font: 400 12px/16px "Montserrat", sans-serif;
+}
+
+#contact {
+  background: #F9F9F9;
+  padding: 20px;
+  margin: 0px 0;
+  border-radius: 4px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+h3 {
+   display: block;
+   font-size: 25px;
+   font-weight: 300;
+   margin-bottom: 8px;
+ }
+
+h4 {
+  margin: 5px 0 2px;
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+h5 {
+  margin: 5px 0 2px;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.TaskID {
+  text-align: center;
+  font-size: 26px;
+  padding-bottom: 7px;
+}
+
+.img-container {
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.code {
+  border-radius: 6px;
+  border: 5px solid #fd3a52;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 5px;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="password"],
+#contact input[type="username"],
+#contact input[type="tel"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 0;
+  padding: 6px;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="password"]:hover,
+#contact input[type="username"]:hover,
+#contact input[type="tel"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+
+button[type="submit"] {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    background: #fd3a52;
+    color: #FFF;
+    margin: 10px 0 5px;
+    padding: 15px;
+    font-size: 15px;
+}
+
+button[name="admin"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  background: #fd3a52;
+  color: #FFF;
+  margin: 10px 0 5px;
+  padding: 15px;
+  font-size: 15px;
+}
+
+.g-recaptcha {
+    margin-top: 3px;
+    margin-bottom: 5px;
+}
+
+.year {
+  margin-right: 50px;
+}
+
+button[type="submit"]:hover {
+   background: #43A047;
+   -webkit-transition: background 0.3s ease-in-out;
+   -moz-transition: background 0.3s ease-in-out;
+   transition: background-color 0.3s ease-in-out;
+ }
+
+button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.country {
+    width: 100%;
+    padding-bottom: 20px;
+    height: 10px;
+}
+
+.label {
+    margin: 0 0 0px;
+}
+
+.agreement {
+    text-align: center;
+  margin-bottom: 0;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
