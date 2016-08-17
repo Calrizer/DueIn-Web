@@ -21,12 +21,35 @@ body {
   background: #fd3a52;
 }
 
+.wrapper {
+  text-align: center;
+}
+
 .logo {
-  display: block;
+   display: inline-block;
+   margin-left: auto;
+   margin-right: auto;
+   padding-top: 50px;
+   padding-bottom: 50px;
+}
+
+.back {
+  display: inline-block;
   margin-left: auto;
   margin-right: auto;
+
   padding-top: 50px;
+  padding-bottom: 50px;
+  padding-right: 125px;
+}
+
+.profile {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
     padding-bottom: 50px;
+    padding-left: 125px;
 }
 
 .container {
