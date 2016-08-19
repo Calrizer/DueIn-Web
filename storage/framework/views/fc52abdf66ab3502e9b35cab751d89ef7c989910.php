@@ -7,11 +7,15 @@
 </head>
 
 <body>
+<div class="menuwrapper">
+    <div class="menubar">
+
+    </div>
+</div>
 <div class="wrapper">
     <a href="#"><img class="back" src="<?php echo e(URL::to('forms/arrow.png')); ?>" href="<?php echo e(URL::route('nav.landing')); ?>"/></a>
     <a href="<?php echo e(URL::route('nav.landing')); ?>"><img class="logo" src="<?php echo e(URL::to('forms/Logo.png')); ?>" href="<?php echo e(URL::route('nav.landing')); ?>"/></a>
-    <a><img class="profile" src="<?php echo e(URL::to('forms/menu.png')); ?>" href="<?php echo e(URL::route('nav.landing')); ?>"/></a>
-
+    <a class="activate"><img class="menu" src="<?php echo e(URL::to('forms/menu.png')); ?>" href="<?php echo e(URL::route('nav.landing')); ?>"/></a>
 </div>
 <div class="container">
     <form id="contact" action="<?php echo e(route('user.signin')); ?>" method="post">
@@ -39,5 +43,7 @@
 
     </form>
 </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="<?php echo e(URL::to('scripts/showMenu.js')); ?>"></script>
 </body>
 </html>

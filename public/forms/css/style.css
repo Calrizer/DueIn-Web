@@ -21,6 +21,17 @@ body {
   background: #fd3a52;
 }
 
+.menuwrapper {
+    text-align: center;
+}
+
+.menubar {
+    width: 100%;
+    height: 60px;
+    background: #F9F9F9;
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
 .wrapper {
   text-align: center;
 }
@@ -43,13 +54,14 @@ body {
   padding-right: 125px;
 }
 
-.profile {
+.menu {
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
     padding-top: 50px;
     padding-bottom: 50px;
     padding-left: 125px;
+    cursor: pointer;
 }
 
 .container {

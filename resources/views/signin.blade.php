@@ -7,11 +7,15 @@
 </head>
 
 <body>
+<div class="menuwrapper">
+    <div class="menubar">
+
+    </div>
+</div>
 <div class="wrapper">
     <a href="#"><img class="back" src="{{URL::to('forms/arrow.png')}}" href="{{URL::route('nav.landing')}}"/></a>
     <a href="{{URL::route('nav.landing')}}"><img class="logo" src="{{URL::to('forms/Logo.png')}}" href="{{URL::route('nav.landing')}}"/></a>
-    <a><img class="profile" src="{{URL::to('forms/menu.png')}}" href="{{URL::route('nav.landing')}}"/></a>
-
+    <a class="activate"><img class="menu" src="{{URL::to('forms/menu.png')}}" href="{{URL::route('nav.landing')}}"/></a>
 </div>
 <div class="container">
     <form id="contact" action="{{route('user.signin')}}" method="post">
@@ -38,5 +42,7 @@
         {{csrf_field()}}
     </form>
 </div>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="{{URL::to('scripts/showMenu.js')}}"></script>
 </body>
 </html>
