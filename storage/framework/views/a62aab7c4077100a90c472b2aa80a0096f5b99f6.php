@@ -28,7 +28,6 @@
             <?php endforeach; ?>
         </div>
     <?php endforeach; ?>
-
 </div>
 </body>
 

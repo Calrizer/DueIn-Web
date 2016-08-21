@@ -74,6 +74,11 @@ Route::group(['middleware' => 'auth'], function (){
         'uses' => 'TaskController@addTask',
         'as' => 'task.add'
     ]);
+
+    Route::delete('task/{id}', [
+        'uses' => 'TaskController@deleteTask',
+        'as' => 'task.delete'
+    ]);
 });
 
 //Takes a given TaskID and renders view with task information

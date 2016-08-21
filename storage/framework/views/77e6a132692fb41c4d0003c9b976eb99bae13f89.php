@@ -219,7 +219,7 @@
                                     <h1>Effortlessly streamline your <br> tasks.</h1>
                                 </div>
                                 <div class="contant-1-text">
-                                    <h2>Duis bibendum diam non <br> erat facilisis tincidunt.</h2>
+                                    <h2>Test <br> erat facilisis tincidunt.</h2>
                                     <p>Duis bibendum diam non erat facilaisis tincidunt. Fusce leo <br /> neque, lacinia at tempor vitae, porta at arcu. Vestibulum <br /> varius non dui at pulvinar. Ut egestas orci in quam <br /> sollicitudin aliquet. </p>
                                     <button type="button" class="btn btn-default edit-button-2">LEARN MORE</button>
                                 </div>

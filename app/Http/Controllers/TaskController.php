@@ -10,6 +10,8 @@ use Auth;
 use App\Http\Requests;
 use DB;
 
+use Log;
+
 class TaskController extends Controller
 {
     public function getTask($id){
@@ -62,7 +64,7 @@ class TaskController extends Controller
         } while ($good = false);
 
         date_default_timezone_set('Europe/London');
-        $set = date('y/m/d h:i:s', time());
+        $set = date('y/m/d H:i:s', time());
 
         $user = Auth::user()->username;
 
@@ -101,6 +103,21 @@ class TaskController extends Controller
             $tasks .= $id.".";
             DB::table('users')->where('username', $user)->update(['due' => $tasks]);
         }
+
+        return redirect()->route('user.profile');
+    }
+
+    public function deleteTask($id){
+
+        $user = Auth::user()->username;
+
+        $tasks = DB::table('users')->where('username', $user)->first()->set;
+
+        Log::info($tasks);
+
+        DB::table('users')->where('username', $user)->update(['set' => str_replace($id.".", "", $tasks)]);
+
+        DB::table('users')->where('TaskID', '=', $id)->delete();
 
         return redirect()->route('user.profile');
     }
