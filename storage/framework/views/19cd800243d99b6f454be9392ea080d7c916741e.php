@@ -24,7 +24,11 @@
         <h4><?php echo e($task->description); ?></h4>
         <h4>Due In: <?php echo e($task->due); ?></h4>
 
-            <div class="row">
+        <div class="line">
+
+        </div>
+
+        <div class="row">
                 <div class="col-xs-6">
                     <h4>Task Info:</h4>
                     <img style="display: inline-block" class="owner" src="<?php echo e(URL::to('images/profiles/cal.jpg')); ?>" width="75px" height="75px">
@@ -33,7 +37,7 @@
                         <h5><?php echo e('@'.$task->owner); ?></h5>
                     </div>
                     <h5>Task Set: <?php echo e($task->set); ?></h5>
-                    <p class="TaskID">ID: <?php echo e($task->TaskID); ?> <img src="<?php echo e(URL::to('task/icon.png')); ?>" width="18px" height="18px"></p>
+                    <p class="TaskID">Task ID: <?php echo e($task->TaskID); ?> <img src="<?php echo e(URL::to('task/icon.png')); ?>" width="18px" height="18px"></p>
                 </div>
                 <div class="col-xs-6">
                     <div class="img-container">

@@ -117,6 +117,15 @@ button[type="submit"] {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
+.line {
+    display: block;
+    background-color: #fd3a52;
+    margin-top: 15px;
+    width: 100%;
+    height: 2px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
 h3 {
    display: block;
    font-size: 25px;
@@ -159,6 +168,7 @@ h5 {
       margin-right: auto;
       margin-left: auto;
       margin-bottom: 5px;
+    margin-top: 10px;
 }
 
 .owner {
