@@ -35,18 +35,90 @@ body {
   z-index: 999;
 }
 
+.profile-bar {
+  position: fixed;
+  display: block;
+  width: 100%;
+  background-color: #F9F9F9;;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  margin: 65px auto auto auto;
+  height: 115px;
+  left: 0;
+  z-index: 998;
+}
+
+.due-selector {
+
+  position: fixed;
+  display: inline-block;
+  float: left;
+  width: 200px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom-left-radius: 4px;
+  background-color: #F9F9F9;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  left: 0;
+  margin: 180px auto auto 70px;
+  padding-top: 10px;
+  height: 50px;
+  z-index: 997;
+}
+
+.set-selector {
+
+  position: fixed;
+  display: inline-block;
+  float: left;
+  width: 200px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom-right-radius: 4px;
+  background-color: #F9F9F9;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  left: 0;
+  margin: 180px auto auto 270px;
+  padding-top: 10px;
+  height: 50px;
+  z-index: 996;
+}
+
+.profile-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.stats-container {
+  display: inline-block;
+  float: right;
+  text-align: center;
+  vertical-align: middle;
+  margin-top: 30px;
+  margin-bottom: auto;
+  margin-left: 60px;
+}
+
+.line {
+  margin-top: 0;
+  display: block;
+  background-color: rgba(50,50,50,0.7);
+  width: 100%;
+  height: 2px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
 .spacer {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  height: 100px;
+  height: 260px;
 }
 
 .logo {
   display: block;
   width: auto;
   height: auto;
- margin-left: 70px;
+  margin-left: 70px;
   padding-top: 20px;
   padding-bottom: 20px;
 
@@ -96,14 +168,7 @@ body {
   border: 2px solid #fd3a52;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.1);
   display: block;
-  margin-bottom: 25px;
-  margin-left: 25px;
-  margin-top: 25px;
-}
-
-.name {
-  text-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  color: #FFFFFF
+  margin: 20px 15px 20px 70px;
 }
 
 #contact input[type="text"],
@@ -146,6 +211,7 @@ h5 {
   display: block;
   font-size: 16px;
   font-weight: 400;
+  padding-bottom: 4px;
 }
 
 .TaskID {

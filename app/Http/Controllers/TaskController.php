@@ -26,6 +26,7 @@ class TaskController extends Controller
     }
 
     public function createTask(Request $request){
+
         $this->validate($request, [
             'title' => 'required|min:2',
             'description' => 'required|min:2',

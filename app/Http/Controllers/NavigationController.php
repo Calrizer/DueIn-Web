@@ -32,4 +32,3 @@ class NavigationController extends Controller
         return view('user.profile');
     }
 }
-

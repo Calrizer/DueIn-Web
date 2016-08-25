@@ -88,18 +88,26 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function showDue(){
+    public function showProfile(){
 
         $user = Auth::user();
 
         $ids = explode(".", $user->due, -1);
 
-        $tasks = [count($ids)];
+        $dueTasks = [count($ids)];
 
         for($current = 0; $current < count($ids); $current++){
-            $tasks[$current] = DB::table('tasks')->where('TaskID', $ids[$current])->first();
+            $dueTasks[$current] = DB::table('tasks')->where('TaskID', $ids[$current])->first();
         }
 
-        return view('user.profile', ['user' => $user, 'tasks' => $tasks]);
+        $ids = explode(".", $user->set, -1);
+
+        $setTasks = [count($ids)];
+
+        for($current = 0; $current < count($ids); $current++){
+            $setTasks[$current] = DB::table('tasks')->where('TaskID', $ids[$current])->first();
+        }
+
+        return view('user.profile', ['user' => $user, 'dueTasks' => $dueTasks, 'setTasks' => $setTasks]);
     }
 }

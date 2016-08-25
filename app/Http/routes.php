@@ -66,7 +66,7 @@ Route::group(['middleware' => 'auth'], function (){
     ]);
 
     Route::get('profile', [
-        'uses' => 'UserController@showDue',
+        'uses' => 'UserController@showProfile',
         'as' => 'user.profile'
     ]);
 
