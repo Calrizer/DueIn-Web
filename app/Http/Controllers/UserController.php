@@ -108,6 +108,6 @@ class UserController extends Controller
             $setTasks[$current] = DB::table('tasks')->where('TaskID', $ids[$current])->first();
         }
 
-        return view('user.profile', ['user' => $user, 'dueTasks' => $dueTasks, 'setTasks' => $setTasks]);
+        return view('user.profile', ['user' => $user, 'dueTasks' => array_reverse($dueTasks), 'setTasks' => array_reverse($setTasks)]);
     }
 }
