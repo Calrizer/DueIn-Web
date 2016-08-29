@@ -76,7 +76,8 @@ class UserController extends Controller
         ]);
 
         if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])) {
-            return redirect()->route('nav.landing');
+            $username = Auth::user()->username;
+            return redirect()->route('user.profile', $username);
         }
 
         return redirect()->back();
@@ -88,26 +89,50 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function showProfile(){
+    public function showProfile($username){
 
         $user = Auth::user();
 
-        $ids = explode(".", $user->due, -1);
+        if ($user->username === $username){
 
-        $dueTasks = [count($ids)];
+            $setTasks = $this->fetchTasks($user->set);
+            $dueTasks = $this->fetchTasks($user->due);
 
-        for($current = 0; $current < count($ids); $current++){
-            $dueTasks[$current] = DB::table('tasks')->where('TaskID', $ids[$current])->first();
+            return view('user.profile', ['user' => $user, 'dueTasks' => array_reverse($dueTasks), 'setTasks' => array_reverse($setTasks)]);
+
+        }else{
+
+            $user = DB::table('users')->where('username', $username)->first();
+
+            $setTasks = $this->fetchTasks($user->set);
+
+            if ($setTasks === false){
+                return view('user.foreign', ['user' => $user, 'setTasks' => $setTasks]);
+            }else{
+                return view('user.foreign', ['user' => $user, 'setTasks' => array_reverse($setTasks)]);
+            }
         }
+    }
 
-        $ids = explode(".", $user->set, -1);
+    private function fetchTasks($method){
 
-        $setTasks = [count($ids)];
+        if($method === ""){
 
-        for($current = 0; $current < count($ids); $current++){
-            $setTasks[$current] = DB::table('tasks')->where('TaskID', $ids[$current])->first();
+            $none = false;
+
+            return $none;
+
+        }else{
+
+            $ids = explode(".", $method, -1);
+
+            $tasks = [count($ids)];
+
+            for($current = 0; $current < count($ids); $current++){
+                $tasks[$current] = DB::table('tasks')->where('TaskID', $ids[$current])->first();
+            }
+
+            return $tasks;
         }
-
-        return view('user.profile', ['user' => $user, 'dueTasks' => array_reverse($dueTasks), 'setTasks' => array_reverse($setTasks)]);
     }
 }

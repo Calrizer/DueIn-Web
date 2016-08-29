@@ -66,7 +66,7 @@
 									<li class="active">
                                       @if(Auth::check())
                                           <li><a class="ifSmall" href="{{URL::route('nav.new')}}">New Task</a></li>
-                                          <li><a class="ifSmall" href="{{URL::route('user.profile')}}">Profile</a></li>
+                                          <li><a class="ifSmall" href="{{URL::route('user.profile', Auth::user()->username)}}">Profile</a></li>
                                           <li><a class="ifSmall" href="{{URL::route('user.logout')}}">Logout</a></li>
                                       @else
                                           <li><a class="ifSmall" href="{{URL::route('nav.signin')}}">Login</a></li>

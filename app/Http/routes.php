@@ -65,7 +65,7 @@ Route::group(['middleware' => 'auth'], function (){
         'as' => 'task.create'
     ]);
 
-    Route::get('profile', [
+    Route::get('user/{username}', [
         'uses' => 'UserController@showProfile',
         'as' => 'user.profile'
     ]);

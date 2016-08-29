@@ -11,6 +11,20 @@
 <div class="bar">
     <a href="<?php echo e(URL::route('nav.landing')); ?>"><img class="logo" src="<?php echo e(URL::to('forms/Logo.png')); ?>" href="<?php echo e(URL::route('nav.landing')); ?>"/></a>
 </div>
+<div class="edit-bg">
+    <div class="edit-profile">
+        <h3 style="display: inline-block">Change Picture:</h3>
+        <i style="display: inline-block; float: right; font-size: 20px; cursor: pointer" class="fa fa-times close-trigger"></i>
+        <div style="display: block"></div>
+        <img style="display: inline-block" class="edit-owner" src="<?php echo e(URL::to('images/profiles/cal.jpg')); ?>" width="75px" height="75px">
+        <div class="profile-container" style="padding-right: 20px">
+            <h4 style="margin-top: 0">@Calrizer</h4>
+            <h5>Callum Drain</h5>
+        </div>
+        <input type="file" value="Choose Image" name="upload" size="40">
+        <button name="submit" type="submit" id="contact-submit" data-submit="Saving...">Save Changes</button>
+    </div>
+</div>
 <div class="profile-bar">
     <img style="display: inline-block" class="owner" src="<?php echo e(URL::to('images/profiles/cal.jpg')); ?>" width="75px" height="75px">
     <div class="profile-container" style="padding-right: 20px; border-right: 2px solid rgba(256, 256, 256, 0.7);">
@@ -18,8 +32,8 @@
         <h5>Callum Drain</h5>
     </div>
     <div class="profile-container" style="margin-left: 20px">
-        <h5>Edit Profile</h5>
-        <h5>Change Picture</h5>
+        <h5 class="profile-trigger" style="cursor: pointer">Edit Profile</h5>
+        <h5 class="picture-trigger" style="cursor: pointer">Change Picture</h5>
     </div>
     <div class="stats-container" style="margin-right: 80px">
         <h3><?php echo e(count($setTasks)); ?></h3>
@@ -69,8 +83,8 @@
                                 <h3><?php echo e($setTask->title); ?></h3>
                                 <h4><?php echo e(htmlentities($setTask->description)); ?></h4>
                                 <h4>Due In: <?php echo e($setTask->due); ?></h4>
-                                <i style="display: inline-block; font-size: 20px; margin: 4px 20px 8px 0">Edit</i>
-                                <i class="fa fa-times" aria-hidden="true" style="display: inline-block; font-size: 24px; color: red"></i>
+                                <p style="display: inline-block; font-size: 20px; margin: 4px 20px 8px 0">Edit</p>
+                                <p style="display: inline-block; font-size: 20px">Delete</p>
                             </div>
                         </div>
                     </div>
@@ -84,5 +98,6 @@
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script type="text/javascript" src="<?php echo e(URL::to('scripts/tabSelector.js')); ?>"></script>
+<script type="text/javascript" src="<?php echo e(URL::to('scripts/changePicture.js')); ?>"></script>
 
 </html>
