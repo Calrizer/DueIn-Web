@@ -18,18 +18,18 @@
         <div style="display: block"></div>
         <img style="display: inline-block" class="edit-owner" src="<?php echo e(URL::to('images/profiles/cal.jpg')); ?>" width="75px" height="75px">
         <div class="profile-container" style="padding-right: 20px">
-            <h4 style="margin-top: 0">@Calrizer</h4>
-            <h5>Callum Drain</h5>
+            <h4 style="margin-top: 0"><?php echo e('@'.$user->username); ?></h4>
+            <h5><?php echo e($user->name); ?></h5>
         </div>
         <input type="file" value="Choose Image" name="upload" size="40">
-        <button name="submit" type="submit" id="contact-submit" data-submit="Saving...">Save Changes</button>
+        <button name="photo-change" type="submit" id="contact-submit" data-submit="Saving...">Save Changes</button>
     </div>
 </div>
 <div class="profile-bar">
     <img style="display: inline-block" class="owner" src="<?php echo e(URL::to('images/profiles/cal.jpg')); ?>" width="75px" height="75px">
     <div class="profile-container" style="padding-right: 20px; border-right: 2px solid rgba(256, 256, 256, 0.7);">
-        <h4>@Calrizer</h4>
-        <h5>Callum Drain</h5>
+        <h4><?php echo e('@'.$user->username); ?></h4>
+        <h5><?php echo e($user->name); ?></h5>
     </div>
     <div class="profile-container" style="margin-left: 20px">
         <h5 class="profile-trigger" style="cursor: pointer">Edit Profile</h5>
@@ -51,6 +51,9 @@
     <h4>Tasks Set</h4>
 </div>
 <div class="spacer"></div>
+<?php if($dueTasks === false): ?>
+    <h3>No Tasks Set</h3>
+<?php else: ?>
 <div class="due-tasks">
     <div class="container-fluid">
         <?php foreach(array_chunk($dueTasks, 2) as $taskChunk): ?>
@@ -61,9 +64,22 @@
                             <div class="view">
                                 <h3><?php echo e($dueTask->title); ?></h3>
                                 <h4><?php echo e(htmlentities($dueTask->description)); ?></h4>
-                                <h4>Due In: <?php echo e($dueTask->due); ?></h4>
-                                <i class="fa fa-check" aria-hidden="true" style="display: inline-block; font-size: 24px; color: green; margin: 4px 20px 8px 0"></i>
-                                <i class="fa fa-times" aria-hidden="true" style="display: inline-block; font-size: 24px; color: red"></i>
+                                <h4 style="margin-bottom: 10px">Due In: <?php echo e($dueTask->due); ?></h4>
+                                <div class="line"></div>
+                                <div style="display: inline-block">
+                                    <form>
+                                        <input type="hidden" value="<?php echo e($dueTask->TaskID); ?>">
+                                        <button name="task-done" type="submit"><i class="fa fa-check" aria-hidden="true" style="display: inline-block; font-size: 24px; color: green; margin: 4px 10px 0 0"></i></button>
+                                        <h4 style="display: inline-block">Complete Task</h4>
+                                    </form>
+                                </div>
+                                <h3 style="display: inline-block; margin-right: 20px; margin-left: 20px">•</h3>
+                                <div style="display: inline-block">
+                                    <form action="<?php echo e(URL::route('task.remove', $dueTask->TaskID)); ?>">
+                                        <button name="task-done" type="submit"><i class="fa fa-times" aria-hidden="true" style="display: inline-block; font-size: 24px; color: red; margin-right: 10px"></i></button>
+                                        <h4 style="display: inline-block">Remove Task</h4>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -72,6 +88,10 @@
         <?php endforeach; ?>
     </div>
 </div>
+<?php endif; ?>
+<?php if($setTasks === false): ?>
+    <h3>No Tasks Set</h3>
+<?php else: ?>
 <div class="set-tasks">
     <div class="container-fluid">
         <?php foreach(array_chunk($setTasks, 2) as $taskChunk): ?>
@@ -93,6 +113,7 @@
         <?php endforeach; ?>
     </div>
 </div>
+<?php endif; ?>
 </body>
 
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>

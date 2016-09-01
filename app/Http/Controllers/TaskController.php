@@ -105,21 +105,42 @@ class TaskController extends Controller
             DB::table('users')->where('username', $user)->update(['due' => $tasks]);
         }
 
-        return redirect()->route('user.profile');
+        return redirect()->route('user.profile', $user);
     }
 
     public function deleteTask($id){
 
+        $task = DB::table('tasks')->where('TaskID', '=', $id)->first();
+
         $user = Auth::user()->username;
 
-        $tasks = DB::table('users')->where('username', $user)->first()->set;
+        if ($user === $task->owner){
 
-        Log::info($tasks);
+            $tasks = DB::table('users')->where('username', $user)->first()->set;
 
-        DB::table('users')->where('username', $user)->update(['set' => str_replace($id.".", "", $tasks)]);
+            DB::table('users')->where('username', $user)->update(['set' => str_replace($id.".", "", $tasks)]);
 
-        DB::table('users')->where('TaskID', '=', $id)->delete();
+            $users = User::all();
 
-        return redirect()->route('user.profile');
+            foreach ($users as $row) {
+                if (strpos($row->due, $id) !== false){
+                    DB::table('users')->where('username', $row->username)->update(['due' => str_replace($id . ".", "", $row->due)]);
+                }
+            }
+
+            DB::table('tasks')->where('TaskID', '=', $id)->delete();
+            unlink(public_path().'/images/codes/'.$id.'.png');
+        }
+
+        return redirect()->route('user.profile', $user);
+    }
+
+    public function removeTask($id){
+
+        $user = Auth::user();
+
+        DB::table('users')->where('username', $user->username)->update(['due' => str_replace($id . ".", "", $user->due)]);
+
+        return redirect()->route('user.profile', $user->username);
     }
 }

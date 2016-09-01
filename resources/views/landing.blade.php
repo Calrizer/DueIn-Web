@@ -85,7 +85,7 @@
                                 <ul>
                                     @if(Auth::check())
                                         <li><a href="{{URL::route('nav.new')}}">New Task</a></li>
-                                        <li><a href="{{URL::route('user.profile')}}">Profile</a></li>
+                                        <li><a href="{{URL::route('user.profile', Auth::user()->username)}}">Profile</a></li>
                                         <li><a href="{{URL::route('user.logout')}}">Logout</a></li>
                                     @else
                                         <li><a href="{{URL::route('nav.signin')}}">Login</a></li>
@@ -413,36 +413,6 @@
                 </div><!-- .row close -->
             </div><!-- .container close -->
         </section><!-- #testimonial close -->
-
-
-        <!-- Submit Start
-        ======================================================== -->
-
-        <section id="submit-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="block">
-                            <div class="submit-contant">
-                                <div class="submit-header">
-									<i class="fa fa-envelope-o"></i>
-                                    <h3>Subscribe our Newsletter</h3>                                   
-                                </div>
-								<div class="submit-area">
-									<div class="submit-bottom">
-										<form action="">
-											<input type="text" placeholder="your email address">
-											<input type="submit" value="submit">
-										</form>
-									</div>
-								</div>
-                            </div>
-                        </div>
-                    </div><!-- .col-md-12 -->
-                </div><!-- .row close -->
-            </div><!-- .container close -->
-        </section><!-- #submit close -->
-
 
         <!-- footer Start
         ====================================================================== -->

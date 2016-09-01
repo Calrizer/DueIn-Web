@@ -64,17 +64,21 @@
 
         @if(Auth::check())
             @if($task->owner === Auth::user()->username)
-                <form action="{{route('task.delete', $task->TaskID)}}" method="delete">
+                <form action="{{route('task.delete', $task->TaskID)}}" method="get">
                     <button name="admin" type="submit" id="contact-submit" data-submit="...Deleting Task">Delete Task</button> <button name="admin" type="submit" id="contact-submit" data-submit="...Deleting Task">Edit Task</button>
                     {{csrf_field()}}
                 </form>
             @else
 
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Adding Task">Add To My Tasks</button>
-
+                <form action="{{route('task.add', $task->TaskID)}}" method="post">
+                    <button name="submit" type="submit" id="contact-submit" data-submit="...Adding Task">Add To My Tasks</button>
+                    {{csrf_field()}}
+                </form>
             @endif
         @else
-            <button name="submit" type="submit" id="contact-submit" data-submit="...Sign In">Sign In To Add This Task</button>
+            <form action="{{route('nav.signin')}}" method="get">
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sign In">Sign In To Add This Task</button>
+            </form>
         @endif
     </div>
 </div>

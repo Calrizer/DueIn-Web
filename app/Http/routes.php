@@ -75,9 +75,14 @@ Route::group(['middleware' => 'auth'], function (){
         'as' => 'task.add'
     ]);
 
-    Route::delete('task/{id}', [
+    Route::get('task/{id}/delete', [
         'uses' => 'TaskController@deleteTask',
         'as' => 'task.delete'
+    ]);
+
+    Route::get('task/{id}/remove', [
+        'uses' => 'TaskController@removeTask',
+        'as' => 'task.remove'
     ]);
 });
 

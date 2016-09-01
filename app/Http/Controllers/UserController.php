@@ -93,12 +93,22 @@ class UserController extends Controller
 
         $user = Auth::user();
 
-        if ($user->username === $username){
+        if ($user->username === $username) {
 
             $setTasks = $this->fetchTasks($user->set);
             $dueTasks = $this->fetchTasks($user->due);
 
-            return view('user.profile', ['user' => $user, 'dueTasks' => array_reverse($dueTasks), 'setTasks' => array_reverse($setTasks)]);
+            if ($setTasks === false) {
+                if ($dueTasks === false) {
+                    return view('user.profile', ['user' => $user, 'dueTasks' => $dueTasks, 'setTasks' => $setTasks]);
+                } else {
+                    return view('user.profile', ['user' => $user, 'dueTasks' => array_reverse($dueTasks), 'setTasks' => $setTasks]);
+                }
+            } else if ($dueTasks === false) {
+                return view('user.profile', ['user' => $user, 'dueTasks' => $dueTasks, 'setTasks' => array_reverse($setTasks)]);
+            }else {
+                return view('user.profile', ['user' => $user, 'dueTasks' => array_reverse($dueTasks), 'setTasks' => array_reverse($setTasks)]);
+            }
 
         }else{
 

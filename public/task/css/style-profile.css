@@ -35,6 +35,15 @@ body {
   z-index: 1000;
 }
 
+.line {
+    display: block;
+    opacity: 0.4;
+    margin: 10px 0 12px 0;
+    width: 100%;
+    height: 1px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+}
+
 .profile-bar {
   position: fixed;
   display: block;
@@ -259,7 +268,7 @@ h5 {
     font-size: 15px;
 }
 
-button[type="submit"] {
+button[name="photo-change"] {
     cursor: pointer;
     width: 100%;
     border: none;
@@ -272,13 +281,26 @@ button[type="submit"] {
     font-size: 15px;
 }
 
-button[type="submit"]:hover {
+button[name="photo-change"]:hover {
     background: #43A047;
     -webkit-transition: background 0.3s ease-in-out;
     -moz-transition: background 0.3s ease-in-out;
     transition: background-color 0.3s ease-in-out;
 }
 
-button[type="submit"]:active {
+button[name="photo-change"]:active {
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+button[name="task-done"] {
+    cursor: pointer;
+    border: none;
+    background: rgba(0, 0, 0, 0);
+}
+
+button[name="task-done"]:hover {
+    opacity: 0.6;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
