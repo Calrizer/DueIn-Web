@@ -15,4 +15,4 @@
 #### The iOS application will be built using Swift and xCode, to better target a native app environment.
 #### The Android application will be built using Java and Android studio.
 ## Third Party Libraries
-#### PHP QR Code Library: http://phpqrcode.sourceforge.net
+#### Google Graph QR Generator https://chart.googleapis.com
