@@ -15,4 +15,4 @@
 #### The iOS application will be built using Swift and xCode, to better target a native app environment.
 #### The Android application will be built using Java and Android studio.
 ## Third Party Libraries
-#### Google Graph QR Generator https://chart.googleapis.com
+#### Google Graph QR Generator: https://chart.googleapis.com
