@@ -98,10 +98,6 @@ Route::get('verify/{id}', [
     'as' => 'user.verify'
 ]);
 
-Route::get('due', function () {
-    return view('user/due');
-});
-
-Route::get('set', function () {
-    return view('user/set');
+Route::get('test', function () {
+    return view('test');
 });

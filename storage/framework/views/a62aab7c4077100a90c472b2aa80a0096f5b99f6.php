@@ -51,10 +51,14 @@
     <h4>Tasks Set</h4>
 </div>
 <div class="spacer"></div>
-<?php if($dueTasks === false): ?>
-    <h3>No Tasks Set</h3>
-<?php else: ?>
+
 <div class="due-tasks">
+    <?php if($dueTasks === false): ?>
+        <div class="no-due">
+            <h3>No Tasks Due</h3>
+            <button name="photo-change" type="submit" id="contact-submit" data-submit="Setting...">Search for Tasks or Users</button>
+        </div>
+    <?php else: ?>
     <div class="container-fluid">
         <?php foreach(array_chunk($dueTasks, 2) as $taskChunk): ?>
             <div class="row">
@@ -87,12 +91,15 @@
             </div>
         <?php endforeach; ?>
     </div>
+    <?php endif; ?>
 </div>
-<?php endif; ?>
-<?php if($setTasks === false): ?>
-    <h3>No Tasks Set</h3>
-<?php else: ?>
 <div class="set-tasks">
+    <?php if($setTasks === false): ?>
+        <div class="no-set">
+            <h3>You haven't set any tasks.</h3>
+            <button name="photo-change" type="submit" id="contact-submit" data-submit="Setting...">Set A New Task</button>
+        </div>
+    <?php else: ?>
     <div class="container-fluid">
         <?php foreach(array_chunk($setTasks, 2) as $taskChunk): ?>
             <div class="row">
@@ -112,8 +119,9 @@
             </div>
         <?php endforeach; ?>
     </div>
+    <?php endif; ?>
 </div>
-<?php endif; ?>
+
 </body>
 
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>

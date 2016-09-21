@@ -129,7 +129,6 @@ class TaskController extends Controller
             }
 
             DB::table('tasks')->where('TaskID', '=', $id)->delete();
-            unlink(public_path().'/images/codes/'.$id.'.png');
         }
 
         return redirect()->route('user.profile', $user);

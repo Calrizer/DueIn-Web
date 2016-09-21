@@ -24,9 +24,7 @@
         <h4>{{$task->description}}</h4>
         <h4>Due In: {{$task->due}}</h4>
 
-        <div class="line">
-
-        </div>
+        <div class="line"></div>
 
         <div class="row">
                 <div class="col-xs-6">
@@ -41,26 +39,10 @@
                 </div>
                 <div class="col-xs-6">
                     <div class="img-container">
-                        <?php
-                            include(public_path().'/scripts/qr/qrlib.php');
-
-                            $directory = public_path().'/images/codes/';
-
-                            $contents = 'http://localhost:8000/task/'.$task->TaskID;
-
-                            $name = $task->TaskID.'.png';
-
-                            $path = $directory.$name;
-
-                            if (!file_exists($path)) {
-                                QRcode::png($contents, $path);
-                            }
-                        ?>
-                        <img class="code" src="{{URL::to('images/codes/'.$task->TaskID.'.png')}}" width="170px" height="170px"/>
+                        <img class="code" src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=http%3A%2F%2Fwww.duein.net%2Ftask%2F{{$task->TaskID}}%2F&choe=UTF-8" width="170px" height="170px"/>
                     </div>
                 </div>
             </div>
-
 
         @if(Auth::check())
             @if($task->owner === Auth::user()->username)
@@ -78,6 +60,7 @@
         @else
             <form action="{{route('nav.signin')}}" method="get">
                 <button name="submit" type="submit" id="contact-submit" data-submit="...Sign In">Sign In To Add This Task</button>
+                {{csrf_field()}}
             </form>
         @endif
     </div>
