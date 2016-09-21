@@ -13,13 +13,18 @@
     text-rendering: optimizeLegibility;
 }
 
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+
 .upper {
     display: block;
-    background: #e53935; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #e53935 , #e35d5b); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #e53935 , #e35d5b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #EB3349; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #EB3349 , #F45C43); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #EB3349 , #F45C43); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     width: 100%;
-    height: 600px;
+    height: 570px;
 }
 
 .bar {
@@ -29,6 +34,27 @@
 .links {
     display: inline-block;
     vertical-align: middle;
+}
+
+.user {
+    margin: 42px 20px 0 0;
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+}
+
+.end {
+    margin-right: 50px;
+}
+
+.auth-button {
+    display: block;
+    width: auto;
+    height: auto;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    padding: 5px 16px 5px 16px;
+    cursor: pointer;
 }
 
 .logo {
@@ -44,22 +70,104 @@
     color: #FFFFFF;
 }
 
-.tv-container {
+.auth {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 30px;
+    color: #fd3a52;
+}
+
+.main {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 32px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+.reasons {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 24px;
+    line-height: 40px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.main-container {
     position: relative;
 }
 
 .tv {
-    width: 850px;
-    margin: 114px 0 0 25px;
+    width: 780px;
+    margin: 80px 0 0 25px;
     z-index: 1;
 }
 
 .phone {
+     border: 0;
+     position: absolute;
+     top: 0;
+     left: 640px;
+     width: 200px;
+     margin: 220px 0 0 0;
+     z-index: 2;
+}
+
+.appstore {
+     border: 0;
+     position: absolute;
+     top: 0;
+     left: 900px;
+     width: 170px;
+     margin: 540px 0 0 0;
+     z-index: 2;
+    cursor: pointer;
+}
+
+.playstore {
     border: 0;
     position: absolute;
     top: 0;
-    left: 720px;
-    width: 200px;
-    margin: 265px 0 0 0;
+    left: 1080px;
+    width: 190px;
+    margin: 528px 0 0 0;
+    opacity: 0.6;
     z-index: 2;
+}
+
+.title {
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 900px;
+    margin: 140px 0 0 0;
+    z-index: 2;
+}
+
+.points {
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 900px;
+    margin: 240px 0 0 0;
+    z-index: 2;
+}
+
+.soon {
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 1120px;
+    margin: 592px 0 0 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.add {
+    width: 26px;
 }

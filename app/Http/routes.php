@@ -97,7 +97,3 @@ Route::get('verify/{id}', [
     'uses' => 'UserController@verify',
     'as' => 'user.verify'
 ]);
-
-Route::get('test', function () {
-    return view('test');
-});

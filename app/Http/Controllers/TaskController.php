@@ -35,8 +35,8 @@ class TaskController extends Controller
             'year' => 'required'
         ]);
 
-        if (not($request->input('hour')) === null){
-            if (not($request->input('minute')) === null){
+        if (!($request->input('hour')) === null){
+            if (!($request->input('minute')) === null){
                 $due = $request->input('year')."-".$request->input('month')."-".$request->input('day')." ".$request->input('hour').":".$request->input('minute').":00";
             }else{
                 $due = $request->input('year')."-".$request->input('month')."-".$request->input('day')." ".$request->input('hour').":00:00";
