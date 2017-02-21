@@ -3,6 +3,13 @@
 <head>
     <title>Due In</title>
     <link rel="stylesheet" href="{{URL::to('styles/landing.css')}}">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-3073624848798671",
+            enable_page_level_ads: true
+        });
+    </script>
 </head>
 <body>
     <section class="upper">
@@ -11,16 +18,21 @@
                 <img class="logo" src="{{URL::to('forms/Logo.png')}}">
             </div>
             <div class="links">
-                <h1 class="header-bar">About</h1>
+                <h4 class="header-bar">About</h4>
             </div>
             <div class="links">
-                <h1 class="header-bar">How It Works</h1>
+                <h4 class="header-bar">How It Works</h4>
             </div>
             <div class="links">
-                <h1 class="header-bar">Download</h1>
+                <h4 class="header-bar">Download</h4>
             </div>
             @if(Auth::check())
                 <div class="user end">
+                    <div class="auth-button">
+                        <h1 class="auth"><a href="{{URL::route('user.logout')}}">Logout</a></h1>
+                    </div>
+                </div>
+                <div class="user">
                     <div class="auth-button">
                         <h1 class="auth"><a href="{{URL::route('user.profile', Auth::user()->username)}}">{{"@".Auth::user()->username}}</a></h1>
                     </div>

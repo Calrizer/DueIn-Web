@@ -64,7 +64,7 @@ a {
 .header-bar {
     margin: 49px 50px 0 0;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 100;
+    font-weight: normal;
     font-size: 18px;
     line-height: 30px;
     color: #FFFFFF;
@@ -72,7 +72,7 @@ a {
 
 .auth {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 100;
+    font-weight: normal;
     font-size: 16px;
     line-height: 30px;
     color: #fd3a52;
@@ -80,7 +80,7 @@ a {
 
 .main {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 100;
+    font-weight: normal;
     font-size: 32px;
     line-height: 40px;
     color: #FFFFFF;
@@ -88,7 +88,7 @@ a {
 
 .reasons {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 100;
+    font-weight: normal;
     font-size: 24px;
     line-height: 40px;
     color: #FFFFFF;
@@ -162,7 +162,7 @@ a {
     left: 1120px;
     margin: 592px 0 0 0;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 100;
+    font-weight: normal;
     font-size: 16px;
     line-height: 30px;
     color: #000000;

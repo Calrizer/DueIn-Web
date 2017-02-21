@@ -14,22 +14,57 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  font-weight: 100;
+  font-weight: normal;
   font-size: 12px;
   line-height: 30px;
   color: #3C3D42;
   background: rgb(50,50,50);
 }
 
+.end {
+    margin-right: 50px;
+}
+
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+}
+
+.control-button {
+    display: block;
+    width: auto;
+    height: 44px;
+    background-color: #FFFFFF;
+    border-radius: 3px;
+    padding: 3px 16px 5px 16px;
+    cursor: pointer;
+}
+
+.controls {
+    margin: 12px 20px 0 0;
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+}
+
+.control-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 0;
+    color: #fd3a52;
+}
+
 .bar {
   position: fixed;
   display: block;
   width: 100%;
+    height: 70px;
   background-color: #fd3a52;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   top: 0;
   left: 0;
   z-index: 1000;
@@ -97,6 +132,24 @@ body {
   z-index: 997;
 }
 
+.complete-selector {
+
+    cursor: pointer;
+    position: fixed;
+    display: inline-block;
+    float: left;
+    width: 200px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #F9F9F9;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    left: 0;
+    margin: 180px auto auto 270px;
+    padding-top: 10px;
+    height: 50px;
+    z-index: 996;
+}
+
 .set-selector {
 
   cursor: pointer;
@@ -110,10 +163,10 @@ body {
   background-color: #F9F9F9;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   left: 0;
-  margin: 180px auto auto 270px;
+  margin: 180px auto auto 470px;
   padding-top: 10px;
   height: 50px;
-  z-index: 996;
+  z-index: 995;
 }
 
 .profile-container {

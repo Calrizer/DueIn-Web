@@ -96,18 +96,23 @@ class UserController extends Controller
         if ($user->username === $username) {
 
             $setTasks = $this->fetchTasks($user->set);
+            $completeTasks = $this->fetchTasks($user->complete);
             $dueTasks = $this->fetchTasks($user->due);
 
             if ($setTasks === false) {
                 if ($dueTasks === false) {
-                    return view('user.profile', ['user' => $user, 'dueTasks' => $dueTasks, 'setTasks' => $setTasks]);
+                    if ($completeTasks === false){
+                        return view('user.profile', ['user' => $user, 'dueTasks' => $dueTasks, 'setTasks' => $setTasks, 'completeTasks' => $completeTasks]);
+                    }else{
+                        return view('user.profile', ['user' => $user, 'dueTasks' => $dueTasks, 'setTasks' => $setTasks, 'completeTasks' => $completeTasks]);
+                    }
                 } else {
-                    return view('user.profile', ['user' => $user, 'dueTasks' => array_reverse($dueTasks), 'setTasks' => $setTasks]);
+                    return view('user.profile', ['user' => $user, 'dueTasks' => array_reverse($dueTasks), 'setTasks' => $setTasks, 'completeTasks' => $completeTasks]);
                 }
             } else if ($dueTasks === false) {
-                return view('user.profile', ['user' => $user, 'dueTasks' => $dueTasks, 'setTasks' => array_reverse($setTasks)]);
+                return view('user.profile', ['user' => $user, 'dueTasks' => $dueTasks, 'setTasks' => array_reverse($setTasks), 'completeTasks' => $completeTasks]);
             }else {
-                return view('user.profile', ['user' => $user, 'dueTasks' => array_reverse($dueTasks), 'setTasks' => array_reverse($setTasks)]);
+                return view('user.profile', ['user' => $user, 'dueTasks' => array_reverse($dueTasks), 'setTasks' => array_reverse($setTasks), 'completeTasks' => $completeTasks]);
             }
 
         }else{

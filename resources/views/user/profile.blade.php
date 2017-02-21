@@ -9,7 +9,17 @@
 </head>
 <body>
 <div class="bar">
-    <a href="{{URL::route('nav.landing')}}"><img class="logo" src="{{URL::to('forms/Logo.png')}}" href="{{URL::route('nav.landing')}}"/></a>
+    <a href="{{URL::route('nav.landing')}}" style="display: inline-block"><img class="logo" src="{{URL::to('forms/Logo.png')}}" href="{{URL::route('nav.landing')}}"/></a>
+    <div class="controls end">
+        <div class="control-button">
+            <h1 class="control-text"><a href="{{URL::route('user.logout')}}">Logout</a></h1>
+        </div>
+    </div>
+    <div class="controls">
+        <div class="control-button">
+            <h1 class="control-text"><a href="{{URL::route('nav.new')}}">Create Task</a></h1>
+        </div>
+    </div>
 </div>
 <div class="edit-bg">
     <div class="edit-profile">
@@ -47,6 +57,9 @@
 <div class="due-selector">
     <h4>Tasks Due</h4>
 </div>
+<div class="complete-selector">
+    <h4>Tasks Complete</h4>
+</div>
 <div class="set-selector">
     <h4>Tasks Set</h4>
 </div>
@@ -59,38 +72,79 @@
             <button name="photo-change" type="submit" id="contact-submit" data-submit="Setting...">Search for Tasks or Users</button>
         </div>
     @else
-    <div class="container-fluid">
-        @foreach(array_chunk($dueTasks, 2) as $taskChunk)
-            <div class="row">
-                @foreach($taskChunk as $dueTask)
-                    <div class="col-md-6">
-                        <div class="container">
-                            <div class="view">
-                                <h3>{{$dueTask->title}}</h3>
-                                <h4>{{htmlentities($dueTask->description)}}</h4>
-                                <h4 style="margin-bottom: 10px">Due In: {{$dueTask->due}}</h4>
-                                <div class="line"></div>
-                                <div style="display: inline-block">
-                                    <form>
-                                        <input type="hidden" value="{{$dueTask->TaskID}}">
-                                        <button name="task-done" type="submit"><i class="fa fa-check" aria-hidden="true" style="display: inline-block; font-size: 24px; color: green; margin: 4px 10px 0 0"></i></button>
-                                        <h4 style="display: inline-block">Complete Task</h4>
-                                    </form>
-                                </div>
-                                <h3 style="display: inline-block; margin-right: 20px; margin-left: 20px">•</h3>
-                                <div style="display: inline-block">
-                                    <form action="{{URL::route('task.remove', $dueTask->TaskID)}}">
-                                        <button name="task-done" type="submit"><i class="fa fa-times" aria-hidden="true" style="display: inline-block; font-size: 24px; color: red; margin-right: 10px"></i></button>
-                                        <h4 style="display: inline-block">Remove Task</h4>
-                                    </form>
+        <div class="container-fluid">
+            @foreach(array_chunk($dueTasks, 2) as $taskChunk)
+                <div class="row">
+                    @foreach($taskChunk as $dueTask)
+                        <div class="col-md-6">
+                            <div class="container">
+                                <div class="view">
+                                    <h3>{{$dueTask->title}}</h3>
+                                    <h4>{{htmlentities($dueTask->description)}}</h4>
+                                    <h4 style="margin-bottom: 10px">Due In: {{$dueTask->due}}</h4>
+                                    <div class="line"></div>
+                                    <div style="display: inline-block">
+                                        <form>
+                                            <input type="hidden" value="{{$dueTask->TaskID}}">
+                                            <button name="task-done" type="submit"><i class="fa fa-check" aria-hidden="true" style="display: inline-block; font-size: 24px; color: green; margin: 4px 10px 0 0"></i></button>
+                                            <h4 style="display: inline-block">Complete Task</h4>
+                                        </form>
+                                    </div>
+                                    <h3 style="display: inline-block; margin-right: 20px; margin-left: 20px">•</h3>
+                                    <div style="display: inline-block">
+                                        <form action="{{URL::route('task.remove', $dueTask->TaskID)}}">
+                                            <button name="task-done" type="submit"><i class="fa fa-times" aria-hidden="true" style="display: inline-block; font-size: 24px; color: red; margin-right: 10px"></i></button>
+                                            <h4 style="display: inline-block">Remove Task</h4>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-            </div>
-        @endforeach
-    </div>
+                    @endforeach
+                </div>
+            @endforeach
+        </div>
+    @endif
+</div>
+<div class="complete-tasks">
+    @if($completeTasks === false)
+        <div class="no-due">
+            <h3>No Tasks Complete</h3>
+            <button name="photo-change" type="submit" id="contact-submit" data-submit="Setting...">Search for Tasks or Users</button>
+        </div>
+    @else
+        <div class="container-fluid">
+            @foreach(array_chunk($completeTasks, 2) as $taskChunk)
+                <div class="row">
+                    @foreach($taskChunk as $completeTask)
+                        <div class="col-md-6">
+                            <div class="container">
+                                <div class="view">
+                                    <h3>{{$completeTask->title}}</h3>
+                                    <h4>{{htmlentities($completeTask->description)}}</h4>
+                                    <h4 style="margin-bottom: 10px">Due In: {{$dueTask->due}}</h4>
+                                    <div class="line"></div>
+                                    <div style="display: inline-block">
+                                        <form>
+                                            <input type="hidden" value="{{$completeTask->TaskID}}">
+                                            <button name="task-done" type="submit"><i class="fa fa-check" aria-hidden="true" style="display: inline-block; font-size: 24px; color: green; margin: 4px 10px 0 0"></i></button>
+                                            <h4 style="display: inline-block">Complete Task</h4>
+                                        </form>
+                                    </div>
+                                    <h3 style="display: inline-block; margin-right: 20px; margin-left: 20px">•</h3>
+                                    <div style="display: inline-block">
+                                        <form action="{{URL::route('task.remove', $completeTask->TaskID)}}">
+                                            <button name="task-done" type="submit"><i class="fa fa-times" aria-hidden="true" style="display: inline-block; font-size: 24px; color: red; margin-right: 10px"></i></button>
+                                            <h4 style="display: inline-block">Remove Task</h4>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            @endforeach
+        </div>
     @endif
 </div>
 <div class="set-tasks">
