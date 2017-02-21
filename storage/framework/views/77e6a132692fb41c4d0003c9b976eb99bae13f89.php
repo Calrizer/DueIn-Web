@@ -14,7 +14,7 @@
                 <h1 class="header-bar">About</h1>
             </div>
             <div class="links">
-                <h1 class="header-bar">Benefits</h1>
+                <h1 class="header-bar">How It Works</h1>
             </div>
             <div class="links">
                 <h1 class="header-bar">Download</h1>
@@ -37,12 +37,11 @@
                     </div>
                 </div>
             <?php endif; ?>
-
         </div>
 
         <div class="main-container">
             <img class="tv" src="<?php echo e(URL::to('images/tv.png')); ?>">
-            <img class="phone" src="<?php echo e(URL::to('landing/img/main.png')); ?>">
+            <img class="phone" src="<?php echo e(URL::to('images/phone.png')); ?>">
             <div class="title">
                 <h1 class="main">The future of setting tasks <br> and reminders is here.</h1>
             </div>

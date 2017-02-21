@@ -142,4 +142,23 @@ class TaskController extends Controller
 
         return redirect()->route('user.profile', $user->username);
     }
+
+    public function completeTask($id){
+
+        $user = Auth::user();
+
+        DB::table('users')->where('username', $user->username)->update(['due' => str_replace($id . ".", "", $user->due)]);
+
+        $tasks = DB::table('users')->where('username', $user)->first()->complete;
+
+        if ($tasks === null){
+            DB::table('users')->where('username', $user)->update(['complete' => $id]);
+        }else{
+            $tasks .= $id.".";
+            DB::table('users')->where('username', $user)->update(['complete' => $tasks]);
+        }
+
+        return redirect()->route('user.profile', $user->username);
+
+    }
 }

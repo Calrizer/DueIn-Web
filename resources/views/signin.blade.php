@@ -9,7 +9,20 @@
 <body>
 <div class="menuwrapper">
     <div class="menubar">
-
+        <div class="menu-content">
+            <img class="sublogo" src="{{URL::to('task/icon.png')}}">
+        </div>
+        <div class="menu-content">
+            <p class="subcontent">Home</p>
+            <p class="separator">•</p>
+            <p class="subcontent">Sign Up</p>
+            <p class="separator">•</p>
+            <p class="subcontent">About</p>
+            <p class="separator">•</p>
+            <p class="subcontent">Help</p>
+            <p class="separator">•</p>
+            <p class="subcontent">Download</p>
+        </div>
     </div>
 </div>
 <div class="wrapper">

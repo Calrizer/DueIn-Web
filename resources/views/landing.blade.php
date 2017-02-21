@@ -14,7 +14,7 @@
                 <h1 class="header-bar">About</h1>
             </div>
             <div class="links">
-                <h1 class="header-bar">Benefits</h1>
+                <h1 class="header-bar">How It Works</h1>
             </div>
             <div class="links">
                 <h1 class="header-bar">Download</h1>

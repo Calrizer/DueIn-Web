@@ -27,9 +27,34 @@ body {
 
 .menubar {
     width: 100%;
-    height: 60px;
+    height: 64px;
     background: #F9F9F9;
     box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.menu-content {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sublogo {
+    margin-top: 20px;
+    margin-right: 22px;
+    width: 22px
+}
+
+.subcontent {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.separator {
+    display: inline-block;
+    margin-top: 12px;
+    margin-left: 12px;
+    margin-right: 12px;
+    font-size: 18px;
 }
 
 .wrapper {
@@ -155,7 +180,7 @@ fieldset {
   border-radius: 4px;
   background: #fd3a52;
   color: #FFF;
-  margin: 0 0 5px;
+  margin: 8px 0 5px;
   padding: 15px;
   font-size: 15px;
 }
@@ -183,7 +208,7 @@ fieldset {
 .country {
     width: 100%;
     padding-bottom: 20px;
-    height: 10px;
+    height: 15px;
 }
 
 .label {

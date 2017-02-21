@@ -97,3 +97,50 @@ Route::get('verify/{id}', [
     'uses' => 'UserController@verify',
     'as' => 'user.verify'
 ]);
+
+//API Routes
+
+Route::get('api/user', [
+   'uses' => 'APIController@getUser',
+    'as' => 'api.user'
+]);
+
+Route::get('api/userinfo', [
+    'uses' => 'APIController@getUserInfo',
+    'as' => 'api.userinfo'
+]);
+
+Route::get('api/set', [
+    'uses' => 'APIController@getUserTasks',
+    'as' => 'api.set'
+]);
+
+Route::get('api/task', [
+    'uses' => 'APIController@getTask',
+    'as' => 'api.task'
+]);
+
+Route::get('api/add', [
+    'uses' => 'APIController@addTask',
+    'as' => 'api.add'
+]);
+
+Route::get('api/remove', [
+    'uses' => 'APIController@removeTask',
+    'as' => 'api.remove'
+]);
+
+Route::get('api/delete', [
+    'uses' => 'APIController@deleteTask',
+    'as' => 'api.delete'
+]);
+
+Route::get('api/complete', [
+    'uses' => 'APIController@completeTask',
+    'as' => 'api.complete'
+]);
+
+Route::get('api/uncomplete', [
+    'uses' => 'APIController@uncompleteTask',
+    'as' => 'api.uncomplete'
+]);

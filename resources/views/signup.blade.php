@@ -10,11 +10,24 @@
 <body>
 <div class="menuwrapper">
   <div class="menubar">
-
+      <div class="menu-content">
+          <img class="sublogo" src="{{URL::to('task/icon.png')}}">
+      </div>
+      <div class="menu-content">
+          <p class="subcontent">Home</p>
+          <p class="separator">•</p>
+          <p class="subcontent">Login</p>
+          <p class="separator">•</p>
+          <p class="subcontent">About</p>
+          <p class="separator">•</p>
+          <p class="subcontent">Help</p>
+          <p class="separator">•</p>
+          <p class="subcontent">Download</p>
+      </div>
   </div>
 </div>
 <div class="wrapper">
-    <a href="#"><img class="back" src="{{URL::to('forms/arrow.png')}}" href="{{URL::route('nav.landing')}}"/></a>
+    <a href="{{URL::route('nav.landing')}}"><img class="back" src="{{URL::to('forms/arrow.png')}}" href="{{URL::route('nav.landing')}}"/></a>
     <a href="{{URL::route('nav.landing')}}"><img class="logo" src="{{URL::to('forms/Logo.png')}}" href="{{URL::route('nav.landing')}}"/></a>
     <a class="activate"><img class="menu" src="{{URL::to('forms/menu.png')}}" href="{{URL::route('nav.landing')}}"/></a>
 </div>
@@ -307,7 +320,7 @@
     <fieldset>
       <button name="submit" type="submit" id="contact-submit" data-submit="...Signing Up">Sign Up</button>
     </fieldset>
-    <p class="agreement">By creating an account you agree to our <a href="https://colorlib.com" target="_blank" title="Terms and Privacy">Terms and Privacy</a>.</p>
+    <p class="agreement">By creating an account you agree to our <a href="{{URL::route('nav.landing')}}" target="_blank" title="Terms and Privacy">Terms and Privacy</a>.</p>
     {{csrf_field()}}
   </form>
 </div>
