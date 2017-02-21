@@ -5,8 +5,8 @@
 #### A scannable QR code is generated allowing people to get all the information about the task downloaded to their mobile device with a single scan.
 #### With the task downloaded, proactive push notifications can provide reminders for the task as it gets closer to the Due In date.
 ## Plan
-#### Phase 1: Web application and server side development. *70% Done!*
-#### Phase 2: iOS application development.
+#### Phase 1: Web application and server side development. *Done!*
+#### Phase 2: iOS application development. *70% Done*
 #### Phase 3: Beta release!
 #### Phase 4: Android application development.
 #### Phase 5: Possible Windows Phone 10 development.
