@@ -6,10 +6,9 @@
 #### With the task downloaded, proactive push notifications can provide reminders for the task as it gets closer to the Due In date.
 ## Plan
 #### Phase 1: Web application and server side development. *Done!*
-#### Phase 2: iOS application development. *70% Done*
+#### Phase 2: iOS application development. *Done!*
 #### Phase 3: Beta release!
 #### Phase 4: Android application development.
-#### Phase 5: Possible Windows Phone 10 development.
 ## Development
 #### The web application is being built upon the Laravel PHP framework, to provide HTTP routing and generally easier database queries.
 #### The iOS application will be built using Swift and xCode, to better target a native app environment.
